@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{lead.title}}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+        <div class="row">
+           <div class="col-sm-4" style="padding: 50px 20px 0 20px">
+                <h1 class="text-center">{{lead.title}}</h1>
+                <img src="{{lead.image.url}}" alt="">
+           </div>
+           <div class="container col-sm-8" style="padding: 50px 20px 0 50px;">
+                <p>{{lead.text}}</p> 
+           </div>
+        </div>
+
+</div>
+
+{% endblock %}

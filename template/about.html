@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Biz haqimizda{% endblock %}
+
+{% block content %}
+
+<h3 class="text-center">Biz haqimizda</h3>
+
+<div class="row mb-2">
+    {% for lead in leads %}
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Texnologiya</strong>
+          <h3 class="mb-0">{{ lead.title }}</h3>
+          <p>{{ lead.description }}</p>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <a href="{{lead.get_absolute_url}}" type="submit" class="btn btn-outline-secondary">Batafsil</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="{{lead.image.url}}" alt="">
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
